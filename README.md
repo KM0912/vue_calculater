@@ -1,4 +1,4 @@
-# vue_calculater
+# vue_calculator
 
 ## Project setup
 ```
