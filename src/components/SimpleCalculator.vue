@@ -24,9 +24,6 @@
 <script>
 export default {
   name: 'SimpleCalculator',
-  props: {
-    msg: String
-  }
 }
 </script>
 
