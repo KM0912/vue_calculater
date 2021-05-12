@@ -2,18 +2,18 @@
   <div >
     <div class="title">SimpleCalculator</div>
     <div class="calculator">
-      <div class="display"></div>
-      <div class="btn">7</div>
-      <div class="btn">8</div>
-      <div class="btn">9</div>
+      <div class="display">{{ inputNum }}</div>
+      <div v-on:click="append('7')" class="btn">7</div>
+      <div v-on:click="append('8')" class="btn">8</div>
+      <div v-on:click="append('9')" class="btn">9</div>
       <div class="operator">C</div>
-      <div class="btn">4</div>
-      <div class="btn">5</div>
-      <div class="btn">6</div>
+      <div v-on:click="append('4')" class="btn">4</div>
+      <div v-on:click="append('5')" class="btn">5</div>
+      <div v-on:click="append('6')" class="btn">6</div>
       <div class="operator">-</div>
-      <div class="btn">1</div>
-      <div class="btn">2</div>
-      <div class="btn">3</div>
+      <div v-on:click="append('1')" class="btn">1</div>
+      <div v-on:click="append('2')" class="btn">2</div>
+      <div v-on:click="append('3')" class="btn">3</div>
       <div class="operator">+</div>
       <div class="btn zero">0</div>
       <div class="operator">=</div>
@@ -24,6 +24,16 @@
 <script>
 export default {
   name: 'SimpleCalculator',
+  data() {
+    return {
+      inputNum: '',
+    }
+  },
+  methods: {
+    append(number) {
+      this.inputNum = `${this.inputNum}${number}`
+    }
+  }
 }
 </script>
 
@@ -53,7 +63,7 @@ export default {
   grid-column: 1 / 4;
 }
 .operator {
-  background-color:steelblue;
+  background-color: steelblue;
   border: 1px solid #999;
 }
 </style>
