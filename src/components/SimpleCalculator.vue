@@ -15,7 +15,7 @@
       <div v-on:click="append('2')" class="btn">2</div>
       <div v-on:click="append('3')" class="btn">3</div>
       <div class="operator">+</div>
-      <div class="btn zero">0</div>
+      <div v-on:click="append('0')" class="btn zero">0</div>
       <div class="operator">=</div>
     </div>
   </div>
