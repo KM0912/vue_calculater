@@ -2,7 +2,7 @@
   <div >
     <div class="title">SimpleCalculator</div>
     <div class="calculator">
-      <div class="display">{{ inputNum }}</div>
+      <div class="display">{{ inputNum || '0' }}</div>
       <div v-on:click="append('7')" class="btn">7</div>
       <div v-on:click="append('8')" class="btn">8</div>
       <div v-on:click="append('9')" class="btn">9</div>
@@ -31,6 +31,10 @@ export default {
   },
   methods: {
     append(number) {
+      // 入力済みの値が''(空)で入力値が0の場合は何もせずに終了
+      if (this.inputNum == '' && number == 0) {
+        return
+      }
       this.inputNum = `${this.inputNum}${number}`
     }
   }
